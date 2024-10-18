@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./  # Ruta al Dockerfile del frontend
+      dockerfile: Dockerfile
+    ports:
+      - "4321:80"  # Exponer el puerto del frontend en la máquina host
+    networks:
+      - back_my-network
+
+networks:
+  back_my-network:
+    external: true  # Usar la red externa ya creada

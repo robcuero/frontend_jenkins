@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: frontend-image
+    ports:
+      - "4321:80"  # Exponer el puerto del frontend en la máquina host
+    networks:
+      - backend_my-network
+
+networks:
+  backend_my-network:
+    external: true  # Usar la red externa ya creada
